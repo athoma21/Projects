@@ -4,7 +4,7 @@ import random
 
 def print_wait(msg):
     print(msg)
-    time.sleep(1)
+    time.sleep(2)
 
 
 def valid_input(prompt, options):
@@ -17,8 +17,8 @@ def valid_input(prompt, options):
 
 
 def play_again():
-    play = valid_input("Would you like to play again? "
-                       "Enter y or n", ["y", "n"])
+    print_wait("Would you like to play again? Enter y or n")
+    play = valid_input("Enter y or n", ["y", "n"])
     if play == "y":
         print_wait("Loading game...")
         game()
@@ -37,7 +37,7 @@ def chapter1():
                " strange cult is headquartered somewhere "
                "around town and "
                "people have been disappearing.")
-    print_wait("In front of you is a house.")
+    print_wait("In front of you is a castle.")
     print_wait("To your right is a forest.")
     print_wait("In your hand you hold a rusty dagger.")
 
@@ -47,8 +47,7 @@ def field(weapon, character):
     print_wait("Enter 2 to go into the forest.")
     print_wait("What would you like to do?")
     while True:
-        option1 = valid_input("Please enter "
-                              "1 or 2.", ["1", "2"])
+        option1 = valid_input("Please enter 1 or 2.", ["1", "2"])
         if option1 == "1":
             house(weapon, character)
             break
@@ -60,7 +59,7 @@ def field(weapon, character):
 def house(weapon, character):
     print_wait("A strange " + character +
                " answers the door and invites "
-               "you inside and you walk in.\n")
+               "you inside and you walk in.")
     print_wait("The " + character + " asks you to sit "
                "down while they use the restroom.")
     print_wait("You hear a faint sound and you get up to "
@@ -73,13 +72,11 @@ def house(weapon, character):
     if "dynamite" not in weapon:
         print_wait("You feel extremely fearful "
                    " only having a rusty dagger. ")
-
+    print_wait("Enter 1 to dive through the open window to escape to the field.")
+    print_wait("Enter 2 to fight.")
+    print_wait("What would you like to do?")   
     while True:
-        option2 = valid_input("Enter 1 to dive through the open"
-                              "window to escape "
-                              "to the field. "
-                              "Enter 2 to fight ",
-                              ["1", "2"])
+        option2 = valid_input("Enter 1 or 2 ", ["1", "2"])
 
         if option2 == "2":
             if "dynamite" in weapon:
