@@ -1,11 +1,13 @@
 import time
 import random
 
+#Function prints strings with a 2 second time delay
 
 def print_wait(msg):
     print(msg)
     time.sleep(2)
 
+#Function that validates input
 
 def valid_input(prompt, options):
     while True:
@@ -15,6 +17,7 @@ def valid_input(prompt, options):
         print_wait(f'Sorry, the option "{option}" is invalid. '
                    'Try again!')
 
+#Function that triggers a prompt to restart or exit the game
 
 def play_again():
     print_wait("Would you like to play again? Enter y or n")
